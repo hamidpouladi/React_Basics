@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 2 | React Basics with Hamid Pouladi</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript" src="../libs/react.min.js"></script>
+    <script type="text/javascript" src="../libs/react-dom.min.js"></script>
+    <script type="text/javascript">
+      //Create UI Elements with react
+      let spanStyles = {
+        color: "yellow",
+        fontWeight: "normal",
+        display: "inline-block",
+        marginLeft: "5px",
+      };
+      //button component
+      const buttonEl = (props) => {
+        console.log("props is: ", props);
+        return React.createElement(
+          "button",
+          { className: "btn-rounded" },
+          props.sign,
+          React.createElement(
+            "span",
+            {
+              style: spanStyles,
+            },
+            props.text
+          )
+        );
+      };
+      console.dir(buttonEl);
+
+      const divEl = React.createElement(
+        "div",
+        null,
+        React.createElement(buttonEl, { sign: "+", text: "Add" }),
+        React.createElement(buttonEl, { sign: "-", text: "minus" })
+      );
+
+      ReactDOM.render(divEl, document.getElementById("root"));
+    </script>
+  </body>
+</html>

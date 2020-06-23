@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 6 | React Basics with Hamid Pouladi</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript" src="../libs/react.min.js"></script>
+    <script type="text/javascript" src="../libs/react-dom.min.js"></script>
+    <script type="text/javascript" src="../libs/babel.min.js"></script>
+    <script type="text/babel">
+      // Counter component
+      function Counter() {
+        return (
+          <div className="counter">
+            <h2>counter</h2>
+            <div>
+              <button>-</button>
+              <span className="count">0</span>
+              <button>+</button>
+            </div>
+          </div>
+        );
+      }
+      //Render to DOM
+      ReactDOM.render(<Counter />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

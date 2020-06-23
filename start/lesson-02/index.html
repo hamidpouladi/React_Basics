@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 2 | React Basics with Hamid Pouladi</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript" src="../libs/react.min.js"></script>
+    <script type="text/javascript" src="../libs/react-dom.min.js"></script>
+    <script type="text/javascript">
+      //Create UI Elements with react
+      let spanStyles = {
+        color: "yellow",
+        fontWeight: "normal",
+        display: "inline-block",
+        marginLeft: "5px",
+      };
+      const buttonEl = React.createElement(
+        "button",
+        { className: "btn-rounded" },
+        "+",
+        React.createElement(
+          "span",
+          {
+            style: spanStyles,
+          },
+          "Add"
+        )
+      );
+      console.dir(buttonEl);
+
+      ReactDOM.render(buttonEl, document.getElementById("root"));
+    </script>
+  </body>
+</html>

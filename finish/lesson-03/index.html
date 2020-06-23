@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lesson 3 | React Basics with Hamid Pouladi</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript" src="../libs/react.min.js"></script>
+    <script type="text/javascript" src="../libs/react-dom.min.js"></script>
+    <script type="text/javascript" src="../libs/babel.min.js"></script>
+    <script type="text/babel">
+      //Create UI Elements with react
+      // let spanStyles = {
+      //   color: "yellow",
+      //   fontWeight: "normal",
+      //   display: "inline-block",
+      //   marginLeft: "5px",
+      // };
+      // // button component
+      // const buttonEl = (props) => {
+      //   return React.createElement(
+      //     "button",
+      //     { className: "btn-rounded" },
+      //     props.sign,
+      //     React.createElement(
+      //       "span",
+      //       {
+      //         style: spanStyles,
+      //       },
+      //       props.text
+      //     )
+      //   );
+      // };
+
+      // const divEl = React.createElement(
+      //   "div",
+      //   null,
+      //   React.createElement(buttonEl, { sign: "+", text: "Add" }),
+      //   React.createElement(buttonEl, { sign: "-", text: "minus" })
+      // );
+
+      //Create ui with jsx
+      let spanStyles = { color: "yellow" };
+      function Button({ sign, text }) {
+        return (
+          <button className="btn-rounded">
+            {sign}
+            <span style={spanStyles}>{text}</span>
+          </button>
+        );
+      }
+
+      // Render React Element
+      ReactDOM.render(
+        <div>
+          <Button sign="+" text="Add" />
+          <Button sign="-" text="minus" />
+        </div>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
